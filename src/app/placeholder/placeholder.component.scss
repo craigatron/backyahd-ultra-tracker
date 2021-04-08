@@ -1,0 +1,58 @@
+@import '../../colors.scss';
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.time {
+  color: #ff8700;
+  font-size: 50px;
+  font-family: 'Permanent Marker', sans-serif;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.subtitle {
+  font-size: 24px;
+  font-family: 'Chewy', sans-serif;
+}
+
+.donate {
+  font-size: 20px;
+  font-family: 'Chewy', sans-serif;
+  margin-top: 30px;
+}
+
+.tracker {
+  margin-top: 30px;
+}
+
+.tracker a {
+  font-family: 'Chewy', sans-serif;
+  font-size: 30px;
+  display:inline-block;
+  padding:0.1em 0.8em;
+  border:0.1em solid $rhOrange;
+  margin:0 0.3em 0.3em 0;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  color: $rhOrange;
+  text-align:center;
+  transition: all 0.2s;
+}
+
+.tracker a:hover {
+  color:$rhGrey;
+  background-color:$rhOrange;
+}

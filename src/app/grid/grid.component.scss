@@ -1,0 +1,194 @@
+@import '../../colors.scss';
+
+.outer {
+    position: relative;
+}
+
+.inner {
+    margin-left: 380px;
+}
+
+.horiz-scroll {
+    overflow-x: auto;
+}
+
+.donation-tracker {
+    align-items: center;
+    background-color: $rhBlue;
+    box-sizing: border-box;
+    color: $rhGrey;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Chewy', sans-serif;
+    font-size: 50px;
+    min-height: 200px;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+a.donate-button {
+    font-size: 30px;
+    display:inline-block;
+    padding:0.1em 0.8em;
+    border:0.1em solid $rhOrange;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    color: $rhOrange;
+    text-align:center;
+    transition: all 0.2s;
+}
+
+a.donate-button:hover {
+    color:$rhGrey;
+    background-color:$rhOrange;
+}
+
+@media all and (max-width:30em) {
+    a.donate-button {
+        display:block;
+        margin:0.4em auto;
+    }
+}
+
+.status-box {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 10px 0;
+    border: 1px solid $rhBlue;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.status-box .header {
+    font-weight: 600;
+}
+
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+td {
+    height: 100px;
+}
+
+th {
+    background-color: #e5e5e5;
+    height: 70px;
+    border-bottom: 1px solid $rhBlue;
+}
+
+th .header {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+th, td {
+    box-sizing: border-box;
+    padding: 8px;
+    vertical-align: middle;
+}
+
+.loop-header {
+    width: 150px;
+}
+
+.sticky {
+    position: absolute;
+}
+
+.col1 {
+    left: 0;
+    width: 100px;
+    padding: 0;
+}
+
+.col2 {
+    left: 100px;
+    width: 180px;
+}
+
+.col3 {
+    left: 280px;
+    width: 100px;
+}
+
+.col12 {
+    left: 0;
+    width: 280px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+
+.profile i {
+    font-size: 70px;
+}
+
+td > div {
+    height: 100%;
+}
+
+div.runner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+div.runner img {
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+div.mileage {
+    display: flex;
+    align-items: center;
+}
+
+td.center div {
+    justify-content: center;
+}
+
+td div span {
+    margin-right: 5px;
+}
+
+td.waiting {
+    background-color: #e5e5e5;
+}
+
+td.complete {
+    background-color: #43aa8b;
+}
+
+td.quit {
+    background-color: #f94144;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.status i {
+    font-size: 50px;
+}
+
+i {
+    user-select: none;
+}
+
+.total-miles {
+    font-weight: 500;
+}

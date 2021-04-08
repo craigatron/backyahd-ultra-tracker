@@ -1,0 +1,21 @@
+<div class="main-wrapper">
+    <div class="toolbar">
+        <div class="title" fxFlex fxShow="true" fxHide.lt-md="true">
+            Road Hazahds Backyahd Ultra
+        </div>
+        <div class="title" fxFlex fxShow="false" fxShow.lt-md="true">RHBU</div>
+        <div class="nav">
+            <a routerLink="/track">Tracker</a>
+            <a routerLink="/track/about">About</a>
+            <a href="https://give.thetrevorproject.org/team/339922" target="_blank">Donate</a>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <router-outlet></router-outlet>
+    </div>
+
+    <footer class="footer">
+        A <a href="https://github.com/craigatron" target="_blank">Craig Martek</a> production
+    </footer>
+</div>

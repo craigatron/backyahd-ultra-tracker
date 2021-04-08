@@ -1,0 +1,56 @@
+@import '../../colors.scss';
+
+.main-wrapper {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+
+.toolbar {
+    padding: 20px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    background-color: #eee;
+    height: 80px;
+}
+
+.title {
+    color: #ff8700;
+    font-size: 30px;
+    font-family: 'Permanent Marker',sans-serif;
+}
+
+.nav a {
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    margin: 0 10px;
+    color: #008;
+}
+
+.nav a:visited {
+    color: #008;
+}
+
+.content-wrapper {
+    margin: auto;
+    margin-top: 10px;
+    width: 100%;
+}
+
+@media all and (min-width: 1000px) {
+    .content-wrapper {
+        max-width: 1000px;
+        width: 1000px;
+    }
+}
+
+footer {
+    background-color: $rhGrey;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}

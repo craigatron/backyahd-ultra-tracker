@@ -1,0 +1,81 @@
+<div class="wrapper">
+    <div class="donation-tracker">
+        <div>
+            <span class="donation-amt">${{donationAmount?.toLocaleString()}}</span>
+            raised for The Trevor Project!
+        </div>
+        <div>
+            <a class="donate-button" href="https://give.thetrevorproject.org/team/339922" target="_blank">Donate</a>
+        </div>
+    </div>
+    <div class="status-box">
+        <span class="header">Current status:</span> {{status}}
+    </div>
+    <div [ngClass.gt-sm]="{'outer': true}" [ngClass.sm]="{'outer': false}">
+        <div #innerTable [ngClass.gt-sm]="{'inner': true}" [ngClass.sm]="{'inner': false}" class="horiz-scroll" (wheel)="scrollHorizontally($event)">
+            <table>
+                <tr>
+                    <th [ngClass.gt-sm]="{'sticky': true, 'col12': true}" [ngClass.sm]="{'sticky': false, 'col12': false}" colspan="2">
+                        <div class="header">Runner</div>
+                    </th>
+                    <th [ngClass.gt-sm]="{'sticky': true, 'col3': true}" [ngClass.sm]="{'sticky': false, 'col3': false}">
+                        <div class="header">total miles (mi/loop)</div>
+                    </th>
+                    <th *ngFor="let loop of loops">
+                        <div class="loop-header">Loop {{loop.loopNum}}<br/>{{loop.timeRange}}</div>
+                    </th>
+                </tr>
+                <tr *ngFor="let runner of runners; let runnerNum = index;">
+                    <td [ngClass.gt-sm]="{'sticky': true, 'col1': true}" [ngClass.sm]="{'sticky': false, 'col1': false}">
+                        <div class="profile">
+                            <i *ngIf="!runner.profileImgUrl" class="material-icons">directions_run</i>
+                            <img *ngIf="runner.profileImgUrl" src="https://storage.googleapis.com/rhbu-static-files/{{runner.profileImgUrl}}" height="100">
+                        </div>
+                    </td>
+                    <td [ngClass.gt-sm]="{'sticky': true, 'col2': true}" [ngClass.sm]="{'sticky': false, 'col2': false}">
+                        <div class="runner">
+                            <div>{{runner.callsign}}</div>
+                            <div *ngIf="runner.facebookUsername || runner.instagramUsername || runner.twitterUsername" class="social">
+                                <a *ngIf="runner.facebookUsername" href="https://facebook.com/{{runner.facebookUsername}}" target="_blank">
+                                    <img src="/assets/facebook.svg" height="20" width="20">
+                                </a>
+                                <a *ngIf="runner.instagramUsername" href="https://instagram.com/{{runner.instagramUsername}}" target="_blank">
+                                    <img src="/assets/instagram.svg" height="20" width="20">
+                                </a>
+                                <a *ngIf="runner.twitterUsername" href="https://twitter.com/{{runner.twitterUsername}}" target="_blank">
+                                    <img src="/assets/twitter.svg" height="20" width="20">
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+                    <td [ngClass.gt-sm]="{'sticky': true, 'col3': true}" [ngClass.sm]="{'sticky': false, 'col3': false}" class="center">
+                        <div class="mileage">
+                            <span class="total-miles">{{runner.totalMiles}}</span>
+                            <span>({{runner.loopMiles}})</span>
+                        </div>
+                    </td>
+                    <td 
+                        *ngFor="let runnerLoop of runnerLoops.get(runner.callsign)"
+                        [class.quit]="runnerLoop.quit"
+                        [class.waiting]="!runnerLoop.quit && !runnerLoop.submitted"
+                        [class.complete]="!runnerLoop.quit && runnerLoop.submitted">
+                        <div class="status">
+                            <a *ngIf="runnerLoop.trackerLink" target="_blank" [href]="runnerLoop.trackerLink">
+                                <i class="material-icons">
+                                    <ng-container *ngIf="runnerLoop.quit">clear</ng-container>
+                                    <ng-container *ngIf="!runnerLoop.quit && !runnerLoop.submitted">update</ng-container>
+                                    <ng-container *ngIf="!runnerLoop.quit && runnerLoop.submitted">check</ng-container>
+                                </i>
+                            </a>
+                            <i class="material-icons">
+                                <ng-container *ngIf="runnerLoop.quit">clear</ng-container>
+                                <ng-container *ngIf="!runnerLoop.quit && !runnerLoop.submitted">update</ng-container>
+                                <ng-container *ngIf="!runnerLoop.quit && runnerLoop.submitted">check</ng-container>
+                            </i>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
