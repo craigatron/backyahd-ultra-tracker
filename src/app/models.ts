@@ -9,7 +9,8 @@ export class Runner {
         readonly quit: boolean,
         readonly instagramUsername?: string,
         readonly facebookUsername?: string,
-        readonly twitterUsername?: string) {}
+        readonly twitterUsername?: string,
+        readonly stravaUsername?: string) {}
 
     get totalMiles(): number {
         return Array.from(this.loops.values()).filter((l) => !l.quit).length * this.loopMiles;

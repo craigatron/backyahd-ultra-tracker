@@ -25,7 +25,8 @@ export class FirebaseService {
          !!x.get('quit'),
          x.get('instagram_username'),
          x.get('facebook_username'),
-         x.get('twitter_username'));
+         x.get('twitter_username'),
+         x.get('strava_username'));
      });
    }
 
