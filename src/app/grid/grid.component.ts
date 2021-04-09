@@ -63,7 +63,7 @@ export class GridComponent implements OnInit {
         this.runnerLoops.set(r.callsign, this.loops.map((l) => {
           const runnerLoop = r.loops.get(l.loopNum.toString());
           if (runnerLoop) {
-            return {quit: runnerLoop.quit, finishTime: runnerLoop.finishTime, submitted: true};
+            return {quit: runnerLoop.quit, finishTime: runnerLoop.finishTime, submitted: true, trackerLink: runnerLoop.trackerLink};
           } else {
             // use the most recent quit value
             return {quit: r.quit, submitted: false};

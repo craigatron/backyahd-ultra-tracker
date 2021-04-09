@@ -70,7 +70,7 @@
                                     <ng-container *ngIf="!runnerLoop.quit && runnerLoop.submitted">check</ng-container>
                                 </i>
                             </a>
-                            <i class="material-icons">
+                            <i *ngIf="!runnerLoop.trackerLink" class="material-icons">
                                 <ng-container *ngIf="runnerLoop.quit">clear</ng-container>
                                 <ng-container *ngIf="!runnerLoop.quit && !runnerLoop.submitted">update</ng-container>
                                 <ng-container *ngIf="!runnerLoop.quit && runnerLoop.submitted">check</ng-container>
