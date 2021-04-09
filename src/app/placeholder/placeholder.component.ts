@@ -22,6 +22,7 @@ export class PlaceholderComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.titleService.setTitle('Road Hazahds | Backyahd Ultra');
+    this.updateTime();
     this.subscription = interval(1000).subscribe(() => {this.updateTime();})
   }
 
